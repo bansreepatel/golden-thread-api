@@ -10,9 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const repository_1 = require("@loopback/repository");
-let User = class User extends repository_1.Entity {
+let Charities = class Charities extends repository_1.Entity {
     getId() {
-        return this.id;
+        return this.charity_id;
     }
 };
 __decorate([
@@ -21,45 +21,23 @@ __decorate([
         id: true
     }),
     __metadata("design:type", Number)
-], User.prototype, "id", void 0);
+], Charities.prototype, "charity_id", void 0);
 __decorate([
     repository_1.property({
         type: 'string',
         required: true
     }),
     __metadata("design:type", String)
-], User.prototype, "firstname", void 0);
+], Charities.prototype, "charity_name", void 0);
 __decorate([
     repository_1.property({
         type: 'string',
         required: true
     }),
     __metadata("design:type", String)
-], User.prototype, "lastname", void 0);
-__decorate([
-    repository_1.property({
-        type: 'string',
-        required: true
-    }),
-    __metadata("design:type", String)
-], User.prototype, "email", void 0);
-__decorate([
-    repository_1.property({
-        type: 'string',
-        required: true
-    }),
-    __metadata("design:type", String)
-], User.prototype, "username", void 0);
-__decorate([
-    repository_1.property({
-        type: 'string',
-        required: true
-    }),
-    __metadata("design:type", String)
-], User.prototype, "password", void 0);
-User = __decorate([
+], Charities.prototype, "charity_desc", void 0);
+Charities = __decorate([
     repository_1.model()
-], User);
-exports.User = User;
-// question: what does the question mark mean next to the id variable?
-//# sourceMappingURL=user.js.map
+], Charities);
+exports.Charities = Charities;
+//# sourceMappingURL=charities.js.map

@@ -25,8 +25,9 @@ let LoginController = class LoginController {
         var users = await this.userRepo.find();
         var email = login.username;
         var password = login.password;
+        var id = login.id;
         for (i = 0; i < users.length; i++) {
-            if (users[i].username == email && users[i].password == password) {
+            if (users[i].username == email && users[i].password == password && users[i].id == id) {
                 return users[i];
             }
         }

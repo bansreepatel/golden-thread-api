@@ -4,5 +4,5 @@ import { Login } from "../models/login";
 export declare class LoginController {
     private userRepo;
     constructor(userRepo: UserRepository);
-    login(login: Login): Promise<User | "ERROR">;
+    login(login: Login): Promise<User | "Sorry! User not found!">;
 }

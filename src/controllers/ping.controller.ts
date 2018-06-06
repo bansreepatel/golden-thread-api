@@ -1,5 +1,5 @@
 import {Request, RestBindings} from '@loopback/rest';
-import {get} from '@loopback/openapi-v3';
+import {get, param} from '@loopback/openapi-v3';
 import {inject} from '@loopback/context';
 
 /**

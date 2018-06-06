@@ -14,36 +14,26 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const rest_1 = require("@loopback/rest");
 const repository_1 = require("@loopback/repository");
-const user_repository_1 = require("../repositories/user.repository");
-const login_1 = require("../models/login");
-let LoginController = class LoginController {
-    constructor(userRepo) {
-        this.userRepo = userRepo;
+const donations_repository_1 = require("../repositories/donations.repository");
+const donations_1 = require("../models/donations");
+let DonationsController = class DonationsController {
+    constructor(donationsRepo) {
+        this.donationsRepo = donationsRepo;
     }
-    async login(login) {
-        var i;
-        var users = await this.userRepo.find();
-        var email = login.username;
-        var password = login.password;
-        var id = login.id;
-        for (i = 0; i < users.length; i++) {
-            if (users[i].username == email && users[i].password == password && users[i].id == id) {
-                return users[i];
-            }
-        }
-        return "Sorry! User not found!";
+    async donations(donations) {
+        return this.donationsRepo.create(donations);
     }
 };
 __decorate([
-    rest_1.post('/login'),
+    rest_1.post('/donations'),
     __param(0, rest_1.requestBody()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [login_1.Login]),
+    __metadata("design:paramtypes", [donations_1.Donations]),
     __metadata("design:returntype", Promise)
-], LoginController.prototype, "login", null);
-LoginController = __decorate([
-    __param(0, repository_1.repository(user_repository_1.UserRepository.name)),
-    __metadata("design:paramtypes", [user_repository_1.UserRepository])
-], LoginController);
-exports.LoginController = LoginController;
-//# sourceMappingURL=login.controller.js.map
+], DonationsController.prototype, "donations", null);
+DonationsController = __decorate([
+    __param(0, repository_1.repository(donations_repository_1.DonationsRepository.name)),
+    __metadata("design:paramtypes", [donations_repository_1.DonationsRepository])
+], DonationsController);
+exports.DonationsController = DonationsController;
+//# sourceMappingURL=donations.controller.js.map

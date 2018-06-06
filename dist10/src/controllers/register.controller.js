@@ -17,13 +17,13 @@ const repository_1 = require("@loopback/repository");
 const user_repository_1 = require("../repositories/user.repository");
 const user_1 = require("../models/user");
 let RegisterController = class RegisterController {
+    // the constructor links the controller and the repository
     constructor(userRepo) {
         this.userRepo = userRepo;
     }
     async createUser(user) {
         return await this.userRepo.create(user);
     }
-    // 
     async getAllUsers() {
         return await this.userRepo.find();
     }

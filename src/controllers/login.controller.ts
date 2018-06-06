@@ -18,6 +18,6 @@ export class LoginController {
               return users[i];
           }
     }
-    return "ERROR";
+    return "Sorry! User not found!";
   }
 }

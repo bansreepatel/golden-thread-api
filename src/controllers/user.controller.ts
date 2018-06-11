@@ -3,6 +3,7 @@ import { repository } from "@loopback/repository";
 import { User } from "../models/user";
 import { UserRepository } from "../repositories/user.repository";
 
+
 export class UserController {
   constructor(@repository(UserRepository.name) private userRepo: UserRepository) {}
 
